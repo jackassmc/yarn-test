@@ -1,0 +1,19 @@
+name: Test yarn
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: ["1.14", "1.14.1", "1.14.1_Pre-Release_1", "1.14.1_Pre-Release_2", "1.14.2", "1.14.2_Pre-Release_1", "1.14.2_Pre-Release_2", "1.14.2_Pre-Release_3", "1.14.2_Pre-Release_4", "1.14.3", "1.14.3-pre1", "1.14.3-pre2", "1.14.3-pre3", "1.14.3-pre4", "1.14.4-pre1", "1.14.4-pre2", "1.14.4-pre3", "1.14.4-pre4", "1.14.4-pre5", "1.14.4-pre6", "1.14.4-pre7", "1.14_Pre-Release_1", "1.14_Pre-Release_2", "1.14_Pre-Release_3", "1.14_Pre-Release_4", "1.14_Pre-Release_5", "1.14_combat-212796", "1.15", "1.15-pre1", "1.15-pre2", "1.15-pre3", "1.15-pre4", "1.15-pre5", "1.15-pre6", "1.15-pre7", "1.15.1", "1.15.1-pre1", "1.15.2-pre1", "1.15.2-pre2", "18w43c", "18w44a", "18w45a", "18w46a", "18w47a", "18w47a-suffix-marathon", "18w47b", "18w48a", "18w48b", "18w49a", "18w50a", "19w02a", "19w03a", "19w03b", "19w03c", "19w04a", "19w04b", "19w05a", "19w06a", "19w07a", "19w08a", "19w08b", "19w09a", "19w11a", "19w11b", "19w12a", "19w12b", "19w13a", "19w13b", "19w14a", "19w14b", "19w34a", "19w35a", "19w36a", "19w37a", "19w38a", "19w38b", "19w39a", "19w40a", "19w41a", "19w42a", "19w44a", "19w45a", "19w45b", "19w46a", "19w46b", "1_14_combat-0", "1_14_combat-3", "1_15_combat-1", "1_15_combat-6", "20w06a", "20w07a", "20w08a", "20w09a", "3D_Shareware_v1.34"]
+    steps:
+      - name: Test yarn
+        run: |
+          #git clone https://github.com/FabricMC/yarn
+          #git checkout ${{ matrix.branch }}
+          echo ${{ matrix.branch }}

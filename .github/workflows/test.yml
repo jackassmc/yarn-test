@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: openjdk:15-jdk
+      image: openjdk:8-jdk-buster
       options: --user root
     strategy:
       matrix:
@@ -17,7 +17,8 @@ jobs:
     steps:
       - name: Test yarn
         run: |
-          yum install -y git
+          apt-get update
+          apt-get install -y git
           git clone https://github.com/FabricMC/yarn
           cd yarn
           git checkout ${{ matrix.branch }}

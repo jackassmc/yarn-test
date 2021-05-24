@@ -114,12 +114,12 @@ jobs:
           git clone https://github.com/FabricMC/yarn
           cd yarn
           git checkout ${{ matrix.branch }}
-#       - name: Test
-#         run: |
-#           cd yarn
-#           ./gradlew build --stacktrace
-      - name: Test pinned
+      - name: Test unpinned
         run: |
           cd yarn
-          sed -i 's/tiny-remapper:+/tiny-remapper:0.2.1.63/' build.gradle 
           ./gradlew build --stacktrace
+#       - name: Test pinned
+#         run: |
+#           cd yarn
+#           sed -i 's/tiny-remapper:+/tiny-remapper:0.2.1.63/' build.gradle 
+#           ./gradlew build --stacktrace
